@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Flask Web Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Flask × HTML × CSS × JS デモ</h1>
+
+  <form action="/result" method="post">
+    <label>名前：</label>
+    <input type="text" name="username" required><br>
+
+    <label>好きな色：</label>
+    <input type="color" name="favcolor" value="#ff0000"><br>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <p id="preview">色を選んでプレビューしてね</p>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

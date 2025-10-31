@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>結果</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color: {{ color }};">
+  <h1>こんにちは、{{ name }} さん！</h1>
+  <p>あなたの好きな色は {{ color }} ですね。</p>
+  <a href="/">戻る</a>
+</body>
+</html>
