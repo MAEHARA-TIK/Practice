@@ -1,0 +1,41 @@
+body {
+  font-family: "Hiragino Sans", sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #f8f9fa;
+  transition: background-color 0.6s ease;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+#result {
+  font-size: 24px;
+  color: #333;
+  margin: 20px 0;
+  transition: all 0.6s ease;
+  opacity: 1;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* ドーン！演出 */
+.show {
+  transform: scale(1.4);
+  font-size: 42px;
+  opacity: 1;
+}
