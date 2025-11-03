@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ToDoリスト</title>
+  <link rel="stylesheet" href="style.css"> <!-- Lが小文字、ファイル名もstyle.cssで統一 -->
+</head>
+<body>
+  <header>
+    <h1>ToDoリストアプリ</h1>
+  </header>
+
+  <main>
+    <div class="input-area">
+      <!-- placehoolder → placeholder（綴りミス） -->
+      <input type="text" id="task-input" placeholder="やることを入力">
+      <button id="add-btn">追加</button>
+    </div>
+
+    <!-- 最後の " は不要（削除） -->
+    <ul id="task-list"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
