@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="usf-8">
+    <title>HTML練習</title>
+    <meta name="description" content="HTMLサンプルページ">
+</head>
+
+<body>
+    <header>
+        <h1>総合サンプル</h1>
+        <nav>
+            <a href="#intro">自己紹介</a> |
+            <a href="#Profile">プロフィール</a> |
+            <a href="#table">表</a> |
+            <a href="#media">メディア</a> |
+            <a href="#from">フォーム</a> |
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>1. 段落と見出し</h2>
+            <p>これはHTMLの練習ページです。<strong>太字</strong>や<em>斜体</em>を使えます。</p>
+            <p>段落を分けて、<br>改行もできます。</p>
+
+        </section>
+
+        <section id="Profile">
+            <h2>2. リスト・リンク・画像</h2>
+            <h3>趣味リスト</h3>
+            <ul>
+                <li>プログラミング</li>
+                <li>Youtube</li>
+                <li>ゲーム</li>
+            </ul>
+
+            <h3>やりたいこと</h3>
+            <ol>
+                <li>朝の散歩</li>
+                <li>筋トレ</li>
+                <li>規則正しい生活</li>
+            </ol>
+
+            <p>GitHub：<a href="https://github.com/MAEHARA-TIK" target="_blank">MAEHARA-TIK</a></p>
+            <img src="https://picsum.photos/300" alt="ランダム画像">
+        </section>
+
+        <section id="table">
+            <h2>3. テーブル（表）</h2>
+            <table border="1">
+                <caption>スケジュール</caption>
+                <tr>
+                    <th>7:00</th><th>起床・コーヒー</th>
+                </tr>
+                <tr>
+                    <td>12:00</td><td>プログラム勉強</td>
+                </tr>
+                <tr>
+                    <td>18:00</td><td>夕食</td>
+                </tr>
+                <tr>
+                    <td>22:00</td><td>就寝</td>
+                </tr>
+            </table>
+            </section>
+            
+        <section id="media">
+            <h2>4. 動画・地図埋め込み</h2>
+            <h3>Youtube動画</h3>
+            <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture; 
+                    web-share" allowfullscreen></iframe>
+
+            <h3>Googleマップ</h3>
+            <iframe width="300" height="225" 
+                    src="https://www.google.com/maps?q=tokyo&z=10&output=embed"
+                    title="Google Maps"></iframe>
+        </section>
+
+        <section id="from">
+            <h2>5. フォーム</h2>
+            <form>
+                <label>名前：<input type="text" name="name"></label><br><br>
+                <label>メール：<input type="email" name="mail"></label><br><br>
+                <label>好きな色:
+                    <select name="color">
+                        <option value="red">赤</option>
+                        <option value="blue">青</option>
+                        <option value="green">緑</option>
+                    </select>
+                </label><br><br>
+                <label>コメント：<br>
+                    <textarea name="comment" rows="4" cols="40"></textarea>
+                </label><br><br>
+                <button type="submit">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <h2>サイド情報</h2>
+        <p>ここには補足情報やリンクを配置できます。</p>
+    </aside>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025 MAEHARA TAIKI</p>
+    </footer>
+</body>
+</html>
