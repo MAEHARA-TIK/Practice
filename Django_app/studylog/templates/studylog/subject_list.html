@@ -1,0 +1,57 @@
+{% extends "studylog/base.html" %}
+
+{% block title %}学習ログ - 科目一覧{% endblock %}
+
+{% block content %}
+<section class="card">
+    <h2>学習科目を追加</h2>
+    <form action="{% url 'studylog:add_subject' %}" method="post">
+        {% csrf_token %}
+        {{ subject_form.non_field_errors }}
+        {{ subject_form.name }}
+        {{ subject_form.description }}
+        <button type="submit" class="btn">科目を登録</button>
+    </form>
+</section>
+
+<section class="card">
+    <h2>登録済みの科目</h2>
+    {% if subjects %}
+        <table>
+            <thead>
+                <tr>
+                    <th>科目</th>
+                    <th>総学習時間</th>
+                    <th>登録日</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject in subjects %}
+                <tr>
+                    <td>
+                        <a href="{% url 'studylog:subject_detail' subject.pk %}">
+                            {{ subject.name }}
+                        </a>
+                        {% if subject.description %}
+                            <div style="font-size:0.85rem; color:#5f6c96; margin-top:4px;">
+                                {{ subject.description|linebreaksbr }}
+                            </div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if subject.total_minutes %}
+                            約 {{ subject.total_minutes }} 分
+                        {% else %}
+                            まだ記録はありません
+                        {% endif %}
+                    </td>
+                    <td>{{ subject.created_at|date:"Y年n月j日" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>まだ科目が登録されていません。上のフォームから追加しましょう！</p>
+    {% endif %}
+</section>
+{% endblock %}

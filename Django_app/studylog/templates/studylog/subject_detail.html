@@ -1,0 +1,56 @@
+{% extends "studylog/base.html" %}
+
+{% block title %}{{ subject.name }} - 学習ログ{% endblock %}
+
+{% block content %}
+<a href="{% url 'studylog:subject_list' %}" class="btn secondary" style="margin-bottom: 16px;">一覧へ戻る</a>
+
+<section class="card">
+    <h2>{{ subject.name }}
+        {% if total_minutes %}
+            <span class="summary">累計 {{ total_minutes }} 分</span>
+        {% endif %}
+    </h2>
+    {% if subject.description %}
+        <p style="white-space:pre-line; color:#455a64;">{{ subject.description }}</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>学習を記録する</h2>
+    <form action="{% url 'studylog:add_entry' subject.pk %}" method="post">
+        {% csrf_token %}
+        {{ entry_form.non_field_errors }}
+        {{ entry_form.study_date }}
+        {{ entry_form.duration_minutes }}
+        {{ entry_form.notes }}
+        <button type="submit" class="btn">学習ログを追加</button>
+    </form>
+</section>
+
+<section class="card">
+    <h2>これまでの学習記録</h2>
+    {% if entries %}
+        <table>
+            <thead>
+                <tr>
+                    <th>日付</th>
+                    <th>時間 (分)</th>
+                    <th>メモ</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.study_date|date:"Y年n月j日" }}</td>
+                    <td>{{ entry.duration_minutes }}</td>
+                    <td style="white-space:pre-line;">{{ entry.notes }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>まだ学習記録がありません。</p>
+    {% endif %}
+</section>
+{% endblock %}

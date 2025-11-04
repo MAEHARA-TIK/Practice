@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}学習ログ{% endblock %}</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+        }
+        body {
+            margin: 0;
+            background: #f6f7fb;
+        }
+        header {
+            background: #3f51b5;
+            color: #fff;
+            padding: 16px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+        }
+        .container {
+            max-width: 900px;
+            margin: 24px auto;
+            padding: 0 16px 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(63, 81, 181, 0.08);
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        .btn {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+            border-radius: 999px;
+            border: none;
+            padding: 10px 18px;
+            background: #3f51b5;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn.secondary {
+            background: #546e7a;
+        }
+        .btn:hover {
+            opacity: 0.88;
+        }
+        .form-control {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #c5cae9;
+            margin: 6px 0 14px;
+            font-size: 0.95rem;
+        }
+        textarea.form-control {
+            resize: vertical;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #e0e7ff;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        th {
+            background: #f1f3ff;
+            font-weight: 600;
+        }
+        .summary {
+            display: inline-block;
+            background: #e8eaf6;
+            color: #303f9f;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            margin-left: 12px;
+        }
+        a {
+            color: #3f51b5;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 24px 0;
+            color: #818bb0;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            header, .container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'studylog:subject_list' %}" style="color:inherit; text-decoration:none;">学習ログ</a></h1>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        楽しく継続しよう！
+    </footer>
+</body>
+</html>
