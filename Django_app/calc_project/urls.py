@@ -18,9 +18,19 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    # 管理画面用URL（Django標準）
     path('admin/', admin.site.urls),
-    path('', include(('studylog.urls', 'studylog'), namespace='studylog')),
-    path('calculator/', include('calculator.urls')),
+
+    # ---- メインアプリ設定 ----
+    # トップページ（http://127.0.0.1:8000/calculator）で開くアプリを指定
+    # ここでは「calculator」アプリをメインとして設定
+    path('calculator/', include(('calculator.urls', 'calculator'), namespace='calculator')),
+
+    # ---- サブアプリ設定 ----
+    # 学習ログアプリへのルーティング
+    # http://127.0.0.1:8000/studylog/ でアクセスできるようになる
+    path('studylog/', include(('studylog.urls', 'studylog'), namespace='studylog')),
 ]
+
 
 

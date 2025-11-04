@@ -1,12 +1,15 @@
 from django.urls import path
-
 from . import views
 
-app_name = "studylog"
+# このファイルは studylog アプリ（学習ログ）のURL設定をまとめる場所
+# calc_project/urls.py から include() で呼び出される
+
+app_name = "studylog"  # ← テンプレート内で {% url 'studylog:～' %} として使うための名前空間
 
 urlpatterns = [
+    # ---- トップページ（学習科目の一覧）----
+    # 例: http://127.0.0.1:8000/studylog/
+    # → views.subject_list() が実行される
     path("", views.subject_list, name="subject_list"),
-    path("subjects/add/", views.add_subject, name="add_subject"),
-    path("subjects/<int:pk>/", views.subject_detail, name="subject_detail"),
-    path("subjects/<int:pk>/entries/add/", views.add_entry, name="add_entry"),
+
 ]
