@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Input Screen</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="input-screen">
+      <h2 class="input-screen__title">Input Screen</h2>
+
+      <!-- ========================= -->
+      <!--  Display Section（表示部） -->
+      <!-- ========================= -->
+      <section class="input-screen__display">
+        <label class="display__label">Present Value</label>
+        <input class="display__input" type="text" id="present-value" value="1000" disabled>
+
+        <label class="display__label">Input Value</label>
+        <input class="display__input" type="text" id="input-value" value="1000">
+      </section>
+
+      <!-- ========================= -->
+      <!--  Keypad Section（入力部） -->
+      <!-- ========================= -->
+      <section class="input-screen__keypad">
+        
+        <!-- A〜F（HEX用） -->
+        <div class="keypad__row">
+          <div class="keypad__buttons">
+            <button class="keypad__btn" data-value="A">A</button>
+            <button class="keypad__btn" data-value="B">B</button>
+            <button class="keypad__btn" data-value="C">C</button>
+            <button class="keypad__btn" data-value="D">D</button>
+            <button class="keypad__btn" data-value="E">E</button>
+            <button class="keypad__btn" data-value="F">F</button>
+          </div>
+        </div>
+
+        <!-- 7〜9 + Max -->
+        <div class="keypad__row">
+          <div class="keypad__buttons">
+            <button class="keypad__btn" data-value="7">7</button>
+            <button class="keypad__btn" data-value="8">8</button>
+            <button class="keypad__btn" data-value="9">9</button>
+          </div>
+          <div class="keypad__info">
+            <label class="keypad__label">Max:</label>
+            <input class="keypad__input" type="text" id="max-value" value="5000" disabled>
+          </div>
+        </div>
+
+        <!-- 4〜6 + Min -->
+        <div class="keypad__row">
+          <div class="keypad__buttons">
+            <button class="keypad__btn" data-value="4">4</button>
+            <button class="keypad__btn" data-value="5">5</button>
+            <button class="keypad__btn" data-value="6">6</button>
+          </div>
+          <div class="keypad__info">
+            <label class="keypad__label">Min:</label>
+            <input class="keypad__input" type="text" id="min-value" value="0" disabled>
+          </div>
+        </div>
+
+        <!-- 1〜3 + Back / DEC -->
+        <div class="keypad__row">
+          <div class="keypad__buttons">
+            <button class="keypad__btn" data-value="1">1</button>
+            <button class="keypad__btn" data-value="2">2</button>
+            <button class="keypad__btn" data-value="3">3</button>
+          </div>
+          <div class="keypad__functions">
+            <button class="keypad__btn keypad__btn--back" data-action="back">Back</button>
+            <button class="keypad__btn keypad__btn--dec" id="dec" data-action="dec">DEC</button>
+          </div>
+        </div>
+
+        <!-- 0 . +/- Clear HEX -->
+        <div class="keypad__row">
+          <div class="keypad__buttons">
+            <button class="keypad__btn" data-value="0">0</button>
+            <button class="keypad__btn" data-value=".">.</button>
+            <button class="keypad__btn" data-action="sign">+/-</button>
+          </div>
+          <div class="keypad__functions">
+            <button class="keypad__btn keypad__btn--clear" id="clear" data-action="clear">Clear</button>
+            <button class="keypad__btn keypad__btn--hex" id="hex" data-action="hex">HEX</button>
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- ========================= -->
+      <!--  Footer Section（操作部） -->
+      <!-- ========================= -->
+      <footer class="input-screen__footer">
+        <button class="footer__btn footer__btn--ok" id="ok">OK</button>
+        <button class="footer__btn footer__btn--cancel" id="cancel">Cancel</button>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

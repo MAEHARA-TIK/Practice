@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>履歴付き電卓</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 80px; }
+        input, select, button { font-size: 18px; margin: 5px; }
+        .history { margin-top: 40px; text-align: left; width: 300px; margin: 40px auto; }
+        .history h2 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; }
+        td, th { border-bottom: 1px solid #ccc; padding: 5px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>履歴付き電卓</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="num1" required>
+        <select name="op">
+            <option value="+">＋</option>
+            <option value="-">－</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+        <input type="number" name="num2" required>
+        <button type="submit">計算</button>
+    </form>
+
+    {% if result is not None %}
+        <h2>結果：{{ result }}</h2>
+    {% endif %}
+
+    <div class="history">
+        <h2>履歴（最新10件）</h2>
+        <table>
+            <tr><th>式</th><th>結果</th></tr>
+            {% for item in history %}
+                <tr>
+                    <td>{{ item.expression }}</td>
+                    <td>{{ item.result }}</td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="2">履歴なし</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
