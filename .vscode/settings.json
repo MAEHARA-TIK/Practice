@@ -1,0 +1,57 @@
+{
+  // ===== Python環境設定 =====
+  "python.defaultInterpreterPath": "/usr/local/bin/python",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+
+  // ===== Blackフォーマッタ設定 =====
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  // ===== フォーマット・整形 =====
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
+  // ===== Lintを自動で走らせる =====
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.banditEnabled": false, // セキュリティは手動で十分
+
+  // ===== Django補完・構文 =====
+  "files.associations": {
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-html",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+
+  // ===== Git操作関連 =====
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": true,
+
+  // ===== エディタ外観 =====
+  "workbench.colorTheme": "Default Dark+",
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ===== 拡張機能関連 =====
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "explorer.confirmDelete": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2000,
+  "terminal.integrated.defaultProfile.linux": "bash"
+}

@@ -1,0 +1,200 @@
+/* ==========================
+   基本レイアウト
+========================== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f0f4f8 0%, #e3e7ec 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ==========================
+   コンテナ全体
+========================== */
+.input-screen {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px 35px;
+  width: 440px;
+  text-align: center;
+}
+
+.input-screen__title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* ==========================
+   表示エリア
+========================== */
+.input-screen__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.display__label {
+  font-size: 16px;
+  color: #444;
+  align-self: flex-start;
+}
+
+.display__input {
+  width: 94%;
+  height: 40px;
+  font-size: 18px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: right;
+  background: #fafafa;
+}
+
+/* ==========================
+   キーパッド全体
+========================== */
+.input-screen__keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 各行 */
+.keypad__row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 数字・英字ボタン */
+.keypad__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.keypad__btn {
+  width: 65px;
+  height: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #ccd3db;
+  background: #f2f5f8;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.keypad__btn:hover {
+  background: #e2ebf5;
+}
+
+/* 特殊ボタン（Back / Clear / DEC / HEX） */
+.keypad__btn--back,
+.keypad__btn--clear,
+.keypad__btn--dec,
+.keypad__btn--hex {
+  width: 100px;
+  height: 50px;
+  font-size: 14px;
+}
+
+/* Max / Min 情報 */
+.keypad__info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.keypad__label {
+  font-size: 16px;
+  color: #444;
+  text-align: right;
+}
+
+.keypad__input {
+  width: 164px;
+  height: 36px;
+  font-size: 18px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+/* DEC / HEX セクション */
+.keypad__functions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ==========================
+   フッター（OK / Cancel）
+========================== */
+.input-screen__footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.footer__btn {
+  width: 210px;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* OKボタン */
+.footer__btn--ok {
+  background: #4b8df8;
+  color: white;
+}
+.footer__btn--ok:hover {
+  background: #3a7de0;
+}
+
+/* Cancelボタン */
+.footer__btn--cancel {
+  background: #f4f6f8;
+  border: 1px solid #ccd3db;
+}
+.footer__btn--cancel:hover {
+  background: #e8ebef;
+}
+
+/* ==========================
+   DEC / HEX モード状態
+========================== */
+.keypad__btn--dec,
+.keypad__btn--hex {
+  transition: 0.2s;
+}
+
+/* アクティブ状態 */
+.keypad__btn--dec.active,
+.keypad__btn--hex.active {
+  background: #4b8df8;
+  color: white;
+  border-color: #3a7de0;
+}
+
+/* 無効状態 */
+.keypad__btn--dec:disabled,
+.keypad__btn--hex:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #e0e0e0;
+  color: #777;
+  border-color: #bbb;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Django Dev Environment",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "web",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true,
+        "python.analysis.autoImportCompletions": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        }
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "github.vscode-pull-request-github",
+        "oderwat.indent-rainbow"
+      ]
+    }
+  },
+  "postCreateCommand": "python manage.py migrate",
+  "remoteUser": "root"
+}
