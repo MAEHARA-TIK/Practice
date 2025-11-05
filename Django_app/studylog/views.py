@@ -56,3 +56,5 @@ def add_entry(request, pk):
         entry.subject = subject
         entry.save()
     return redirect(reverse("studylog:subject_detail", kwargs={"pk": subject.pk}))
+
+

@@ -1,0 +1,231 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+/* 背景：淡いグラデーション＋中央配置 */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #fff5f5 0%, #f1f5f9 100%);
+}
+
+/* コンテナ */
+.frame-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.frame:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ログインパネル */
+.div-2 {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 36px;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* ヘッダー */
+.div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.div-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+.vector-wrapper svg { display: block; }
+
+/* タイトル */
+.text-wrapper {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 24px;
+  text-align: center;
+}
+.text-wrapper-2 {
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* フォーム */
+.div-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+.text-wrapper-3, .text-wrapper-5 {
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.rectangle, .rectangle-2 {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(226, 232, 240, 1);
+  background: #ffffff;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #000;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+.rectangle::placeholder, .rectangle-2::placeholder {
+  color: #94a3b8;
+}
+.rectangle:focus, .rectangle-2:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.4);
+  border-color: #3b82f6;
+}
+
+/* パスワード行 */
+.div-7 {
+  position: relative;
+}
+.div-8 {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  transition: opacity 0.2s ease;
+}
+.div-8:hover { opacity: 0.7; }
+.div-8:focus {
+  outline: 2px solid rgba(59,130,246,0.25);
+  border-radius: 6px;
+}
+.div-8 svg { display: block; }
+
+/* チェックボックス行 */
+.frame-wrapper-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+  background: transparent !important;
+  border: none !important;
+}
+.rectangle-3 {
+  width: 18px;
+  height: 18px;
+  accent-color: #3b82f6;
+  vertical-align: middle;
+}
+.text-wrapper-8 {
+  color: #64748b;
+  font-size: 14px;
+}
+.text-wrapper-9 {
+  color: #3b82f6;
+  font-size: 14px;
+  text-decoration: none;
+}
+.text-wrapper-9:hover { text-decoration: underline; }
+
+/* ログインボタン */
+.div-wrapper-2 {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #64748b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.div-wrapper-2:hover {
+  background: #475569;
+  transform: translateY(-1px);
+}
+.div-wrapper-2:active {
+  transform: translateY(0);
+}
+
+/* テストアカウント */
+.frame-wrapper-3 {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+}
+.text-wrapper-10 {
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.div-12 {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+.div-13 {
+  display: flex;
+  gap: 6px;
+  color: #475569;
+  font-size: 13px;
+}
+.text-wrapper-12 {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* フッター */
+.p {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 24px;
+}
+.div-14 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+.text-wrapper-13 {
+  color: #94a3b8;
+  font-size: 11px;
+}

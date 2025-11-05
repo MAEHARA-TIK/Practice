@@ -23,3 +23,4 @@ def index(request):
 
     history = Calculation.objects.order_by("-created_at")[:10]  # 最新10件
     return render(request, "calculator/index.html", {"result": result, "history": history})
+

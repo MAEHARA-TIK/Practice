@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # ---- メインアプリ設定 ----
-    # トップページ（http://127.0.0.1:8000/calculator）で開くアプリを指定
+    # トップページ（http://127.0.0.1:8000/inputValue）で開くアプリを指定
     # ここでは「calculator」アプリをメインとして設定
-    path('calculator/', include(('calculator.urls', 'calculator'), namespace='calculator')),
+    path('inputValue', include(('inputValue.urls', 'inputValue'), namespace='calculator')),
 
     # ---- サブアプリ設定 ----
     # 学習ログアプリへのルーティング
